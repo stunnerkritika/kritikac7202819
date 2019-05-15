@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+
+    <!-- Bootstrap core CSS -->
+	
+    <link href="Styles/bootstrap1.css" rel="stylesheet">
+    <link href="Styles/style7.css" rel="stylesheet">
+
+	
+	<script>
+
+function load()
+{
+	
+	
+	var txt =  document.getElementById('txt').value;
+	var req;
+	if(window.XMLHttpRequest)
+	{
+		req = new XMLHttpRequest();
+		
+	}
+	else req = new ActiveXObject("Microsoft.XMLHTTP");
+	req.onreadystatechange = function()
+	{
+		if(req.readyState==4)
+		{
+		
+		document.getElementById('mydiv').innerHTML = req.responseText;
+		}
+	}
+req.open("GET", "assignment.php?val="+txt, true)
+req.send();
+
+     
+}
+
+</script>
+ 
+
+  </head>
+
+  <body>
+  
+      <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bundle.js"></script>
+	
+		 		<div class="heading">
+		<p>
+		<h1>Lulworth Cove Drama Club</h1>
+		<h5>Lets Show Your Talent To The World</h5>
+		</p>
+	</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg  bg-dark navigation"style="color:white;">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link active" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+			
+			 <li class="nav-item">
+              <a class="nav-link" href="where.html">Where</a>
+            </li>
+			 </li>
+
+			    <form class="form-inline" action="index.html">
+							<input class="form-control mr-sm-2" type="text" placeholder="Search">
+								<button class="btn btn-success"><img src ="images/search.png" alt="search" width="40" /></button>
+								</form>
+	
+		</ul>
+		
+ 
+		</div>
+	</div>
+    </nav>
+		<p>
+
+</p>	
+  
+
+		<div class="container ">
+		<div class="row">
+		<div class="col-md-6 form-wrap">
+				<form method="post" action="#">
+
+			<p><label>Parent Name </label> <input type ="text" name="Pname" required />
+			</P>
+			<p><label>Child Name</label> <input type ="text" name="Cname" required />
+			</P>
+			<p><label>Date of Birth </label> <input type ="date" id="date" name="DOB" class="custom-select" min="0" required /></p>
+			<p>
+		<script src="js/age.js"></script>
+				<script text="type/javascript">
+							  $(document).ready(function(){
+						
+							   $("#date").change(function(){
+							   var value = $("#date").val();
+								var date = new Date(value);
+								var today = new Date();
+								var age = Math.floor((today-date) / (365.25 * 24 * 60 * 60 * 1000));
+								if(isNaN(age)) {
+
+								// will set 0 when value will be NaN
+								 age=0;
+
+								}
+								else{
+								  age=age;
+								}
+								$('#age').val(age);
+								});
+							   });
+							</script>
+		
+							<div>
+							  <label for="">Age:</label>
+							  <input type="number" id="age" min="0" placeholder="Auto Calculation Your Age" name="age" required>
+							</div>
+	</p>
+			
+			<p><label>Parent Email </label> <input type ="text" name="Pemail"  id="txt" onkeyup="load()" required >
+			<div id="mydiv"> </div>
+			</P>
+			<p><label>Password </label> <input type ="password" name="psw" required >
+			
+			</P>
+			<p><label>Parent Address </label> <input type ="text" name="Paddress" required />
+			</P>
+			<p><label>Parent Phone Number </label> <input type ="text" name="Pnumber" required />
+			</P>
+			
+			<p><label>Select Classes</label>
+			<select name="classes" class="custom-select" >
+			<option>Musical Theatre</option>
+			<option>Singing</option>
+			<option>Dance</option>
+			</select>
+			</p>
+		
+			
+			<label>Comments</label>
+			<P>
+			
+			<textarea name="comments" class="custom-select" style="height:200px" ></textarea>
+			</p>
+			<p><input type="submit" name="register" value="Register" > </P>
+
+</form>
+						</div>
+						</div>
+						 </div>
+
+   
+
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-light  pt-4" style="background:#040527; color:white; height:50%;">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+	
+	   <hr>
+	   
+	 <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+	<h5 class="mb-1">Subscribe us to get latest news</h5>
+	<form>
+      <li class="list-inline-item">
+        <input type="text" onfocus="this.value=''" name="newemail" placeholder="Enter Email......." required />
+      </li>
+      <li class="list-inline-item">
+        <button class="btn btn-danger btn-rounded" name="subscribe">Subsrcibe</button>
+      </li>
+	  </form>
+    </ul>
+    <!-- Call to action -->
+
+    <hr>
+
+      <!-- Grid row -->
+      <div class="row">
+	   
+
+   
+
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+
+          <!-- Content -->
+		  
+          <h6 class="font-weight-bold text-uppercase mt-3 mb-3"><span class="ps_icon"> <img src="images/logos.png" alt="logo" width="80"></span><a href="index.html"> Lulworth Cove Drama Club</a></h6>
+          <p>LCDC is local community club which produce talented student. Those student who are telent but has a fanancial problem can easily contact, we there to help those student.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-3">Quick access</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="event.html">Events</a>
+            </li>
+            <li>
+              <a href="forum.html">Forum</a>
+            </li>
+            <li>
+              <a href="Blog.html">Blog</a>
+            </li>
+			<li>
+              <a href="review.html">Review</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contact us</h5>
+
+          <ul class="list-unstyled">
+            <li> <i class="fal fa-map-marker"></i> Dilibazar, Kathmandu</li>
+            <li> <i class="fa fa-envelope-o"></i> info@LCDC.com</li>
+            <li> <i class="fa fa-phone"></i> +977-9860560109 </li>
+            <li> <i class="fa fa-fax"></i> (896) 123-3245 </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+
+
+    <!-- Social buttons -->
+	
+    <ul class="list-unstyled list-inline text-center">
+	<p class="footer-copyright text-center py-3">Connect with us on social site to get latest update</p>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+         <a href="https://en-gb.facebook.com/login/"><img src="images/fb.png" alt="facebook" /></a>
+        </a>
+      </li>
+	  <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+			<a href="https://www.instagram.com/?hl=en" ><img src="images/insta.png" alt="instagram" /></a>
+	          </a>
+      </li>
+	  
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+         <a href="https://twitter.com/login?lang=en"><img src="images/twitter.png" alt="Twitter" /></a>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <a href="https://plus.google.com/people"><img src="images/google.png" alt="Google+" /></a>
+        </a>
+      </li>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <a href="https://reader.rss.com/login"><img src="images/rss.png" alt="rss" /></a>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"> copyright &copy 2018 Lulworth Cove Drama Club. All right reserved.
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+  
+
+  </body>
+</html>
